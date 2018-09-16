@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTransfersTable extends Migration
+class CreatePaysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateTransfersTable extends Migration
      */
     public function up()
     {
-        Schema::create('transfers', function (Blueprint $table) {
+        Schema::create('pays', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ben_number');
             $table->string('remarks');
+            $table->integer('account_number');
             $table->boolean('verified')->default(0);
             $table->integer('amount');
             $table->string('user_id');
-            $table->string('otp')->nullable();
+            $table->string('payee');
             $table->string('otp_code');
             $table->timestamps();
         });
@@ -33,6 +33,6 @@ class CreateTransfersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transfers');
+        Schema::dropIfExists('pays');
     }
 }

@@ -10,6 +10,7 @@ use Mail;
 use Response;
 use App\User;
 use App\Transfer;
+use App\Pay;
 use App\Loan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -40,11 +41,6 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function pay()
-    {
-        return view('pay');
-    }
-
 
 
 
@@ -194,6 +190,80 @@ class HomeController extends Controller
         $transfer = Transfer::where('id','=',$request->input('id'))->get();
         if($request->input('otp') === $transfer[0]->otp_code){
             Session::flash('message', "Your transfer process was sucessful.");
+            return view('home');
+        }
+        else{
+            Session::flash('message', "Sorry, The code you entered is incorrect.");
+            return Redirect::back();   
+        }
+
+    }
+
+
+
+
+
+
+
+
+    public function pay()
+    {
+        return view('pay');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function payDb(Request $request)
+    {
+        $pay = new Pay();
+        $pay->amount = $request->input('amount');
+        $pay->account_number = $request->input('account_number');
+        $pay->remarks = $request->input('remarks');
+        $pay->otp = $request->input('otp');
+        $pay->payee = Auth::user()->firstname.' '. Auth::user()->lastname;
+        $pay->user_id = Auth::user()->id;
+        $pay->otp_code = rand(1111,9999);
+        
+       
+        if($pay->amount > Auth::user()->account_bal ){
+            Session::flash('message', "Sorry you do not have sufficient balance to make this transfer.");
+            return Redirect::back(); 
+        }
+        if($pay->account_number == Auth::user()->account_number){
+            Session::flash('message', "Sorry you can not pay money to yourself.");
+            return Redirect::back();
+        }
+        if($pay->amount <= 0){
+            Session::flash('message', "Please enter a valid amount to transfer.");
+            return Redirect::back();
+        }
+        else {
+            $data = array('name'=>"Ying Banking", 'pay' => $pay);
+   
+            Mail::send(['html'=>'mail-pay'], $data, function($message) {
+               $message->to(Auth::user()->email, 'Ying Banking')->subject
+                  ('Confirm your OTP');
+               $message->from('horluwatowbeey@gmail.com','Ying Banking');
+            });
+            $pay->save();
+            return view('confirm-pay',['pay' => $pay]);
+         } 
+        
+            //else{
+        //     return view('transfer')->withErrors($validator);
+        // }
+    }
+
+
+    public function otpConfirmPay(Request $request)
+    {
+        $pay = Pay::where('id','=',$request->input('id'))->get();
+        if($request->input('otp') === $pay[0]->otp_code){
+            Session::flash('message', "Your payment process was sucessful.");
             return view('home');
         }
         else{

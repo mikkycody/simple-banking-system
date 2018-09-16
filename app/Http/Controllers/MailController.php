@@ -22,7 +22,7 @@ class MailController extends Controller {
       $data = array('name'=>"Ying Banking");
       Mail::send('mail', $data, function($message) {
          $message->to('abc@gmail.com', 'Ying Banking')->subject
-            ('Laravel HTML Testing Mail');
+            ('Test mail');
          $message->from('xyz@gmail.com','Ying Banking');
       });
       echo "HTML Email Sent. Check your inbox.";

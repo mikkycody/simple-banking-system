@@ -65,7 +65,7 @@
                             <a class="nav-link" href="{{ route('transfer') }}">{{ __('Transfer') }}</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="{{ route('pay') }}">{{ __('Bill Pay') }}</a>
+                            <a class="nav-link" href="{{ route('pay') }}">{{ __('Pay Bill') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('loans') }}">{{ __('Apply For Loan') }}</a>
