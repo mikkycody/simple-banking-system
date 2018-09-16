@@ -49,9 +49,19 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|string|max:255',
+            'firstname' => 'required|string|max:255',
+            'lastname' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'mobile' => 'required|string|max:255',
+            'date_of_birth' => 'required|string|max:255',
+            'gender' => 'required|string|max:255',
+            'address' => 'required|string|max:255',
+            'city_name' => 'required|string|max:255',
+            'state' => 'required|string|max:255',
+            'zip_code' => 'required|string|max:255',
+            'account_type' => 'required|string|max:255',
+            'account_pin' => 'required|string|max:255',            
         ]);
     }
 
@@ -64,9 +74,23 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'gender' => $data['gender'],
+            'mobile' => $data['mobile'],
+            'date_of_birth' => $data['date_of_birth'],
+            'address' => $data['address'],
+            'city_name' => $data['city_name'],
+            'state' => $data['state'],
+            'zip_code' => $data['zip_code'],
+            'account_type' => $data['account_type'],
+            'account_pin' => $data['account_pin'],
+            'account_bal' => 100000,
+            'account_number' => rand(1111111111,2000000000),
+
+
         ]);
     }
 }

@@ -29,8 +29,9 @@ class CreateUsersTable extends Migration
             $table->string('zip_code');
             $table->string('account_type');
             $table->string('account_pin');
-            $table->string('account_number');
+            $table->integer('account_number')->unique();
             $table->integer('account_bal');
+            $table->boolean('is_deleted')->default(0);
             $table->boolean('role')->default(0);
             $table->rememberToken();
             $table->timestamps();

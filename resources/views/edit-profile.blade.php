@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header text-center">{{ __('Register') }}</div>
+                <div class="card-header text-center">{{ __('Edit Your Profile') }}</div>
 
                 <div class="card-body">
                     <h3>Personal Info.</h3><hr />
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('edit-profile') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -166,7 +166,7 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="zip_code" class="col-md-4 col-form-label text-md-right">{{ __('Zip code') }}</label>
+                            <label for="zip_code" class="col-md-4 col-form-label text-md-right">{{ __('Zip ode') }}</label>
 
                             <div class="col-md-6">
                                 <input id="zip_code" type="text" class="form-control{{ $errors->has('zip_code') ? ' is-invalid' : '' }}" name="zip_code" value="{{ old('zip_code') }}" required>
@@ -215,7 +215,7 @@
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
-                                        {{ __('Register') }}
+                                        {{ __('Update Info') }}
                                     </button>
                                 </div>
                             </div>       

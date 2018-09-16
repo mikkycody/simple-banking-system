@@ -1,5 +1,36 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Bill Pay</h1>
-    
+<form method="POST" action="{{ route('pay') }}">
+        @csrf
+        <h2 class="text-center">Bill pay</h2><br />
+        <h5 class="text-center">Our bill pay service enables you to pay for a bill online</h5><br />
+        <div class="form-group row">
+            <label for="pay_for" class="col-md-4 col-form-label text-md-right">{{ __('What are you paying for') }}</label>
+
+            <div class="col-md-6">
+                <input id="pay_for" type="text" class="form-control" name="pay_for" value="" required autofocus>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="amount" class="col-md-4 col-form-label text-md-right">{{ __('Amount to pay') }}</label>
+
+            <div class="col-md-6">
+                <input id="amount" type="text" class="form-control" name="amount" value="" required >
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="account_pin" class="col-md-4 col-form-label text-md-right">{{ __('Account Pin') }}</label>
+
+            <div class="col-md-6">
+                <input id="name" type="text" class="form-control" name="remarks" value="" required >
+            </div>
+        </div>
+        <div class="form-group row mb-0">
+            <div class="col-md-6 offset-md-4">
+                <button type="submit" class="btn btn-primary">
+                    {{ __('Pay for bill') }}
+                </button>
+            </div>
+        </div>       
+</form>
 @endsection

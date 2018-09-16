@@ -58,11 +58,14 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @else
-                        <li class="nav-item">
+                            <li class="nav-item">
                             <a class="nav-link" href="{{ route('transfer') }}">{{ __('Transfer') }}</a>
                             </li>
                             <li class="nav-item">
                             <a class="nav-link" href="{{ route('pay') }}">{{ __('Bill Pay') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('loans') }}">{{ __('Apply For Loan') }}</a>
                             </li>
                             <li class="nav-item">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -90,6 +93,11 @@
         <main class="py-4">
             @yield('content')
         </main>
+        {{-- <footer style="margin-top:-25px;" class="navbar navbar-expand-md navbar-light navbar-laravel">
+                <p class="mr-auto">© Copyright 2018 Ying Banking</p>
+                <p  class="ml-auto"><a href="#">Terms and conditions &nbsp;</a>|<a href="#">&nbsp; Policy</a></p>
+        </footer>     --}}
     </div>
+    
 </body>
 </html>

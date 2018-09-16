@@ -19,6 +19,12 @@ class User extends Authenticatable
         'firstname', 'lastname', 'mobile', 'date_of_birth', 'gender', 'email', 'password', 'address', 'city_name', 'state', 'zip_code', 'account_type', 'account_pin', 'account_number', 'account_bal',
     ];
 
+
+    public function transfer()
+    {
+        return $this->hasMany('App\Transfer');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
