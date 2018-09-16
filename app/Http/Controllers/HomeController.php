@@ -187,8 +187,18 @@ class HomeController extends Controller
 
     public function otpConfirm(Request $request)
     {
-        $transfer = Transfer::where('id','=',$request->input('id'))->get();
-        if($request->input('otp') === $transfer[0]->otp_code){
+        $transfer = Transfer::find($request->input('id'));
+        if($request->input('otp') === $transfer->otp_code){
+            $receiver = User::where('account_number', '=', $transfer->ben_number)->get();
+            $sender = User::find(Auth::user()->id);
+            $transfer->verified = 1;
+            $newSenderBal = $sender->account_bal - $transfer->amount;
+            $sender->account_bal = $newSenderBal;
+            $newReceiverBal = $transfer->amount + $receiver[0]->account_bal;
+            $receiver[0]->account_bal = $newReceiverBal;
+            $sender->update();
+            $receiver[0]->update();
+            $transfer->update();
             Session::flash('message', "Your transfer process was sucessful.");
             return view('home');
         }
@@ -261,8 +271,14 @@ class HomeController extends Controller
 
     public function otpConfirmPay(Request $request)
     {
-        $pay = Pay::where('id','=',$request->input('id'))->get();
-        if($request->input('otp') === $pay[0]->otp_code){
+        $pay = Pay::find($request->input('id'));
+        if($request->input('otp') === $pay->otp_code){
+            $pay->verified = 1;
+            $sender = User::find(Auth::user()->id);
+            $newSenderBal = $sender->account_bal - $pay->amount;
+            $sender->account_bal = $newSenderBal;
+            $sender->update();
+            $pay->update();
             Session::flash('message', "Your payment process was sucessful.");
             return view('home');
         }
