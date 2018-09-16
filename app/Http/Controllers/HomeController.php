@@ -192,7 +192,14 @@ class HomeController extends Controller
     public function otpConfirm(Request $request)
     {
         $transfer = Transfer::where('id','=',$request->input('id'))->get();
-        return $transfer;
+        if($request->input('otp') === $transfer[0]->otp_code){
+            Session::flash('message', "Your transfer process was sucessful.");
+            return view('home');
+        }
+        else{
+            Session::flash('message', "Sorry, The code you entered is incorrect.");
+            return Redirect::back();   
+        }
 
     }
 

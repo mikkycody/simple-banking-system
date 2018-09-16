@@ -4,9 +4,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+                @if (Session::has('message'))
+                <div class="alert alert-info"><h4 class="text-center" style="font-family:tahoma;">{{ Session::get('message') }}</h4></div>
+                @endif
             <div class="card">
             <div class="card-header text-center"><h2>{{ __('Account Information') }}</h2></div>
                <div class="card-body"> 
+                   
                 <div class="row">
                     <div class="col-md-4">
                         <h4>Name:</h4>

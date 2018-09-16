@@ -58,6 +58,9 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @else
+                             <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home') }}">{{ __('Home') }}</a>
+                            </li>
                             <li class="nav-item">
                             <a class="nav-link" href="{{ route('transfer') }}">{{ __('Transfer') }}</a>
                             </li>
