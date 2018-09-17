@@ -76,7 +76,8 @@ class HomeController extends Controller
             //     $email = new \App\Mail\Verify($verify);
             //     Mail::to($recipient)->send($email);
             // }
-            return view('home')->with('alert','You transfer process was successful');
+            Session::flash('message', "Your transfer process was sucessful.");
+            return view('home',['loan' => $loan]);
         } else{
             return view('loans',['request' => $requests])->withErrors($validator);
         }
@@ -200,7 +201,7 @@ class HomeController extends Controller
             $receiver[0]->update();
             $transfer->update();
             Session::flash('message', "Your transfer process was sucessful.");
-            return view('home');
+            return view('home',['transfer' => $transfer]);
         }
         else{
             Session::flash('message', "Sorry, The code you entered is incorrect.");
@@ -280,7 +281,7 @@ class HomeController extends Controller
             $sender->update();
             $pay->update();
             Session::flash('message', "Your payment process was sucessful.");
-            return view('home');
+            return view('home',['pay' => $pay]);
         }
         else{
             Session::flash('message', "Sorry, The code you entered is incorrect.");

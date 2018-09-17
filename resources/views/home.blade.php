@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
                 @if (Session::has('message'))
@@ -74,5 +74,117 @@
             </div>
         </div>
     </div>
+</div>
+
+ --}}
+@php
+if (date("H") < 12) {
+    $welcome = 'Good morning';
+} else if (date('H') > 11 && date("H") < 18) {
+    $welcome = 'Good afternoon';
+} else if(date('H') > 17) {
+    $welcome = 'Good evening';
+}
+@endphp
+
+<div class="container">
+    <div style="float:left;" class="col-md-8 card">
+            <br/>
+                <h2 class="text-center">{{$welcome}} {{ Auth::user()->firstname}}</h2>
+                <h3 class="text-center"><i>Account Details</i></h3>
+        <div class="row card-body">
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <b><label for="" class="col-form-label text-md-right">{{ __('Account Name:') }}</label>
+                    <p>{{ Auth::user()->firstname.' '. Auth::user()->lastname}}</p></b>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <b><label for="" class="col-form-label text-md-right">{{ __('Account Number:') }}</label>
+                    <p>{{ Auth::user()->account_number }}</p></b>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <b><label for="" class="col-form-label text-md-right">{{ __('Email Address:') }}</label>
+                    <p>{{Auth::user()->email }}</p></b>
+                </div>
+            </div>
+        </div>
+
+        <div class="row card-body">
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <b><label for="" class="col-form-label text-md-right">{{ __('Mobile number:') }}</label>
+                    <p>{{ Auth::user()->mobile}}</p></b>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <b><label for="" class="col-form-label text-md-right">{{ __('Account Type:') }}</label>
+                    <p>{{ Auth::user()->account_type }}</p></b>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <b><label for="" class="col-form-label text-md-right">{{ __('Account Balance:') }}</label>
+                    <p>${{Auth::user()->account_bal }}</p></b>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row card-body">
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <a class="btn" style="width:100%; background:#a2a2a2; color:white;" href="{{ route('transfer') }}">{{ __('Transfer') }}</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                   
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="col-md-12">
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>  
+
+
+
+
+
+    <div style="float:left; height:432px;" class="col-md-4 card">
+            <br/>
+                <h2 class="text-center">Profile & Settings</h2>
+        <div class="row card-body">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <b><p>Name: {{ Auth::user()->firstname.' '. Auth::user()->lastname}}</p>
+                    <p>Email: {{ Auth::user()->email}}</p>
+                    <p>Mobile number: {{ Auth::user()->mobile}}</p></b><br/>
+                    <a class="btn btn-primary"href="{{ route('transfer') }}">{{ __('View And Edit Profile') }}</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</div>
+<div style="float:left;" class="col-md-8 card">
+        <br/>
+            
 </div>
 @endsection
