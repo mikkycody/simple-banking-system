@@ -72,10 +72,10 @@ var TxtType = function(el, toRotate, period) {
                   </div>
                 </div>
           </div>   --}}
-          <div style="margin-top:-22px;height:500px;width:100%;background: rgb(206,219,233); /* Old browsers */
-          background: -moz-linear-gradient(top, rgba(206,219,233,1) 0%, rgba(170,197,222,1) 17%, rgba(97,153,199,1) 50%, rgba(58,132,195,1) 51%, rgba(65,154,214,1) 59%, rgba(75,184,240,1) 71%, rgba(58,139,194,1) 84%, rgba(38,85,139,1) 100%); /* FF3.6-15 */
-          background: -webkit-linear-gradient(top, rgba(206,219,233,1) 0%,rgba(170,197,222,1) 17%,rgba(97,153,199,1) 50%,rgba(58,132,195,1) 51%,rgba(65,154,214,1) 59%,rgba(75,184,240,1) 71%,rgba(58,139,194,1) 84%,rgba(38,85,139,1) 100%); /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(to bottom, rgba(206,219,233,1) 0%,rgba(170,197,222,1) 17%,rgba(97,153,199,1) 50%,rgba(58,132,195,1) 51%,rgba(65,154,214,1) 59%,rgba(75,184,240,1) 71%,rgba(58,139,194,1) 84%,rgba(38,85,139,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */" class="banner">
+          <div style="margin-top:-22px;height:500px;width:100%;background: rgb(30,87,153); /* Old browsers */
+          background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */" class="banner">
             <h1 class="text-center" style="padding-top:17%;">
                 <a style="text-shadow: 2px 2px; color:#fff; text-decoration: none;" href="" class="typewrite" data-period="2000" data-type='[ "Welcome To Ying Banking.", "Your Banking Is Best Served Secure.", "Send And Recieve Money Easier And Faster.", "Save And Keep Track Of Your Transactions." ]'>
                   <span class="wrap"></span>
