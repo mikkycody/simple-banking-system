@@ -89,12 +89,12 @@ var TxtType = function(el, toRotate, period) {
               </h1>
           </div>
                   <div class="col-md-12">
-                      <div class="card" style="background:#f9f9f9; font-size:25px;">          
+                      <div class="card" style="background:; font-size:25px;">          
                           <div class="card-body">
                             <div class="row jusify-content-center">
-                              <div class="col-md-6">
+                              <div class="col-md-offset-2 col-md-4">
                                   <h2 style="color:gray;font-family:tahoma;">Begin your financial journey</h2>
-                                  <ul style="color:#d7d7d7;font-family:tahoma;">
+                                  <ul style="color:#gray;font-family:tahoma;">
                                     <li>Open an account in minutes</li>
                                     <li>Pay bills instantly</li>
                                     <li>Transfer money</li>
@@ -102,7 +102,7 @@ var TxtType = function(el, toRotate, period) {
                                     <li>Request a loan, and lot more...</li>
                                   </ul>
                               </div>
-                              <div class="col-md-6">
+                              <div class="col-md-4 col-offset-md-2">
                                   <h2 style="color:gray;font-family:tahoma;">Create an account in few minutes</h2>
                                   <h3 style="color:gray;font-family:tahoma;"><i>Instant Access, Easy Payments</i></h3>
                                   <a class="btn btn-primary" href="{{ route('register') }}">{{ __('Get Started') }}</a>
