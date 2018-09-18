@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+{{-- us-cdbr-iron-east-01.cleardb.net, heroku_775fe1827e2341d, bab9a02e75279b,8f5c84a0 --}}
+
 {{-- <form method="POST" action="{{ route('transfer') }}">
         @csrf
         @include('alert')
@@ -64,7 +66,7 @@
             <div class="form-group ">
                 <div class="col-md-12">
                     <label for="" class="col-form-label text-md-right">{{ __('From') }}</label>
-                    <input id="" type="number" class="form-control" name="" value={{ Auth::user()->account_number }} required autofocus disabled>
+                    <input id="" type="number" class="form-control" name="" value={{ Auth::user()->account_number }}  disabled>
                 </div>
             </div>
     </div>

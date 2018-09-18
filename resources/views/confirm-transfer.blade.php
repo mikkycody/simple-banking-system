@@ -23,7 +23,7 @@
                     <label for="" class="col-md-4 col-form-label text-md-right">{{ __('OTP') }}</label>
                     
                     <div class="col-md-6">
-                        <input id="otp" type="number" class="form-control" name="otp" value="" required autofocus>
+                        <input id="otp" type="number" class="form-control" name="otp" value="" autofocus required>
                         <br />
                         <button class="btn btn-primary" type="submit">Submit</button>
                         

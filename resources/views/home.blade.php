@@ -91,6 +91,9 @@ if (date("H") < 12) {
 <div class="container">
     <div style="float:left;" class="col-md-8 card">
             <br/>
+            @if (Session::has('message'))
+            <div class="alert alert-info"><h4 class="text-center" style="font-family:tahoma;">{{ Session::get('message') }}</h4></div>
+            @endif  
                 <h2 class="text-center">{{$welcome}} {{ Auth::user()->firstname}}</h2>
                 <h3 class="text-center"><i>Account Details</i></h3>
         <div class="row card-body">
@@ -134,7 +137,7 @@ if (date("H") < 12) {
             <div class="col-md-4">
                 <div class="col-md-12">
                     <b><label for="" class="col-form-label text-md-right">{{ __('Account Balance:') }}</label>
-                    <p>${{Auth::user()->account_bal }}</p></b>
+                    <p>${{ number_format(Auth::user()->account_bal) }}</p></b>
                 </div>
             </div>
         </div>
@@ -184,8 +187,88 @@ if (date("H") < 12) {
 
 
 </div>
-<div style="float:left;" class="col-md-8 card">
+
+<div style="margin-bottom:3%;" class="col-md-8 card">
         <br/>
-        
+        <div class="tabset">
+            <!-- Tab 1 -->
+            <input type="radio" name="tabset" id="tab1" aria-controls="All" checked>
+            <label for="tab1">All</label>
+            <!-- Tab 2 -->
+            <input type="radio" name="tabset" id="tab2" aria-controls="Credit">
+            <label for="tab2">Credit</label>
+            <!-- Tab 3 -->
+            <input type="radio" name="tabset" id="tab3" aria-controls="Debit">
+            <label for="tab3">Debit</label>
+            
+            <div class="tab-panels">
+              <section id="All" class="tab-panel">
+                <h2>This are all your transactions</h2>
+                @if ($credit->isEmpty())
+                <h3>You do not have  any transaction.</h3>
+                @else
+                <table>
+                <tr>
+                    <th>Amount</th>
+                    <th>From</th>
+                    <th>Date/Time</th>
+                </tr>
+                @foreach ($all as $all)
+                <tr>
+                    <td>${{ number_format($all->amount)}}</td>
+                    <td>{{$all->user->account_number}}</td>
+                    <td>{{$all->created_at}}</td>
+                </tr>
+                @endforeach
+                </table>
+                @endif
+              </section>
+                <section id="Credit" class="tab-panel">
+                <h2>Credit</h2>
+                @if ($credit->isEmpty())
+                <h3>You do not have  any credit transaction.</h3>
+                @else
+                    <table>
+                    <tr>
+                        <th>Amount</th>
+                        <th>From</th>
+                        <th>Date/Time</th>
+                    </tr>
+                    @foreach ($credit as $credit)
+                    <tr>
+                        <td>${{ number_format($credit->amount)}}</td>
+                        <td>{{$credit->user->account_number}}</td>
+                        <td>{{$credit->created_at}}</td>
+                    </tr>
+                    @endforeach
+                    </table>
+                @endif
+                </section>
+                <section id="Debit" class="tab-panel">
+                <h2>Debit</h2>
+                @if ($debit->isEmpty())
+                <h3>You do not have  any debit transaction.</h3>
+                @else{
+                    <table>
+                    <tr>
+                        <th>Amount</th>
+                        <th>From</th>
+                        <th>Date/Time</th>
+                    </tr>
+                    @foreach ($debit as $debit)
+                    
+                    <tr>
+                        <td>${{ number_format($credit->amount)}}</td>
+                        <td>{{$credit->user->account_number}}</td>
+                        <td>{{$credit->created_at}}</td>
+                    </tr>
+                    @endforeach
+                    </table>
+                @endif
+                </section>
+            </div>
+            
+        </div>
+                   
 </div>
 @endsection

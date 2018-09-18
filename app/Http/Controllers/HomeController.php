@@ -33,7 +33,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $all = Transfer::where('ben_number', '=', Auth::user()->account_number)->orWhere('user_id', '=', Auth::user()->user_id)->get();
+        $credit = Transfer::where('ben_number', '=', Auth::user()->account_number)->get();
+        $debit = Transfer::where('user_id', '=', Auth::user()->user_id)->get();
+        return view('home',['credit' => $credit, 'all' => $all, 'debit' => $debit]);
     }
 
     /**
