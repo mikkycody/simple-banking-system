@@ -1,5 +1,14 @@
 @extends('layouts.app')
     @section('content')
+    <style>
+      background: rgba(179,220,237,1);
+background: -moz-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(179,220,237,1)), color-stop(50%, rgba(41,184,229,1)), color-stop(100%, rgba(188,224,238,1)));
+background: -webkit-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+background: -o-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+background: -ms-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+background: linear-gradient(to right, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+  </style>
     <script>
       //made by vipul mirajkar thevipulm.appspot.com
 var TxtType = function(el, toRotate, period) {
@@ -72,17 +81,14 @@ var TxtType = function(el, toRotate, period) {
                   </div>
                 </div>
           </div>   --}}
-          <div style="margin-top:-22px;height:500px;width:100%;background: rgb(30,87,153); /* Old browsers */
-          background: -moz-linear-gradient(top, rgba(30,87,153,1) 0%, rgba(41,137,216,1) 50%, rgba(32,124,202,1) 51%, rgba(125,185,232,1) 100%); /* FF3.6-15 */
-          background: -webkit-linear-gradient(top, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
-          background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */" class="banner">
+          <div style="margin-top:-22px;height:500px;width:100%;" class="banner">
             <h1 class="text-center" style="padding-top:17%;">
                 <a style="text-shadow: 2px 2px; color:#fff; text-decoration: none;" href="" class="typewrite" data-period="2000" data-type='[ "Welcome To Ying Banking.", "Your Banking Is Best Served Secure.", "Send And Recieve Money Easier And Faster.", "Save And Keep Track Of Your Transactions." ]'>
                   <span class="wrap"></span>
                 </a>
               </h1>
           </div>
-                  <div class="col-md-14">
+                  <div class="col-md-12">
                       <div class="card" style="background:#f9f9f9; font-size:25px;">          
                           <div class="card-body">
                             <div class="row">
