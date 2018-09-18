@@ -1,14 +1,7 @@
 @extends('layouts.app')
     @section('content')
     <style>
-      background: rgba(179,220,237,1);
-background: -moz-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
-background: -webkit-gradient(left top, right top, color-stop(0%, rgba(179,220,237,1)), color-stop(50%, rgba(41,184,229,1)), color-stop(100%, rgba(188,224,238,1)));
-background: -webkit-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
-background: -o-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
-background: -ms-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
-background: linear-gradient(to right, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
-  </style>
+    </style>
     <script>
       //made by vipul mirajkar thevipulm.appspot.com
 var TxtType = function(el, toRotate, period) {
@@ -81,7 +74,14 @@ var TxtType = function(el, toRotate, period) {
                   </div>
                 </div>
           </div>   --}}
-          <div style="margin-top:-22px;height:500px;width:100%;" class="banner">
+          <div style="margin-top:-22px;height:500px;width:100%;  background: rgba(179,220,237,1);
+          background: -moz-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+          background: -webkit-gradient(left top, right top, color-stop(0%, rgba(179,220,237,1)), color-stop(50%, rgba(41,184,229,1)), color-stop(100%, rgba(188,224,238,1)));
+          background: -webkit-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+          background: -o-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+          background: -ms-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+          background: linear-gradient(to right, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+          " class="banner bgcoloring">
             <h1 class="text-center" style="padding-top:17%;">
                 <a style="text-shadow: 2px 2px; color:#fff; text-decoration: none;" href="" class="typewrite" data-period="2000" data-type='[ "Welcome To Ying Banking.", "Your Banking Is Best Served Secure.", "Send And Recieve Money Easier And Faster.", "Save And Keep Track Of Your Transactions." ]'>
                   <span class="wrap"></span>
@@ -91,7 +91,7 @@ var TxtType = function(el, toRotate, period) {
                   <div class="col-md-12">
                       <div class="card" style="background:#f9f9f9; font-size:25px;">          
                           <div class="card-body">
-                            <div class="row">
+                            <div class="row jusify-content-center">
                               <div class="col-md-6">
                                   <h2 style="color:gray;font-family:tahoma;">Begin your financial journey</h2>
                                   <ul style="color:#d7d7d7;font-family:tahoma;">
