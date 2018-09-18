@@ -91,7 +91,7 @@ var TxtType = function(el, toRotate, period) {
                   <div class="col-md-12">
                       <div class="card" style="background:; font-size:25px;">          
                           <div class="card-body">
-                            <div class="row jusify-content-center">
+                            <div class="row justify-content-center">
                               <div class="col-md-offset-2 col-md-4">
                                   <h2 style="color:gray;font-family:tahoma;">Begin your financial journey</h2>
                                   <ul style="color:#gray;font-family:tahoma;">
