@@ -93,8 +93,8 @@ var TxtType = function(el, toRotate, period) {
                           <div class="card-body">
                             <div class="row justify-content-center">
                               <div class="col-md-offset-2 col-md-4">
-                                  <h2 style="color:gray;font-family:tahoma;">Begin your financial journey</h2>
-                                  <ul style="color:#gray;font-family:tahoma;">
+                                  <h2 style="color:black;font-family:tahoma;">Begin your financial journey</h2>
+                                  <ul style="color:gray;font-family:tahoma;">
                                     <li>Open an account in minutes</li>
                                     <li>Pay bills instantly</li>
                                     <li>Transfer money</li>
@@ -103,7 +103,7 @@ var TxtType = function(el, toRotate, period) {
                                   </ul>
                               </div>
                               <div class="col-md-4 col-offset-md-2">
-                                  <h2 style="color:gray;font-family:tahoma;">Create an account in few minutes</h2>
+                                  <h2 style="color:black;font-family:tahoma;">Create an account in few minutes</h2>
                                   <h3 style="color:gray;font-family:tahoma;"><i>Instant Access, Easy Payments</i></h3>
                                   <a class="btn btn-primary" href="{{ route('register') }}">{{ __('Get Started') }}</a>
                               </div>
