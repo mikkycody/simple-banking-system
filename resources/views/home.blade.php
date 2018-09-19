@@ -216,7 +216,11 @@ if (date("H") < 12) {
                 @foreach ($all as $all)
                 <tr>
                     <td>${{ number_format($all->amount)}}</td>
+                    @if($all->user->account_number === Auth::user()->account_number)
+                    <td>{{$all->user->account_number}}(You)</td>
+                    @else
                     <td>{{$all->user->account_number}}</td>
+                    @endif
                     <td>{{$all->created_at}}</td>
                 </tr>
                 @endforeach
@@ -248,11 +252,11 @@ if (date("H") < 12) {
                 <h2>Debit</h2>
                 @if ($debit->isEmpty())
                 <h3>You do not have  any debit transaction.</h3>
-                @else{
+                @else
                     <table>
                     <tr>
                         <th>Amount</th>
-                        <th>From</th>
+                        <th>To</th>
                         <th>Date/Time</th>
                     </tr>
                     @foreach ($debit as $debit)
