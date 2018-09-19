@@ -203,10 +203,11 @@ if (date("H") < 12) {
             
             <div class="tab-panels">
               <section id="All" class="tab-panel">
-                <h2>This are all your transactions</h2>
+                <h2>All Transactions</h2>
                 @if ($credit->isEmpty())
                 <h3>You do not have  any transaction.</h3>
                 @else
+                <h2>This are all your transactions</h2>
                 <table>
                 <tr>
                     <th>Amount</th>
@@ -228,7 +229,7 @@ if (date("H") < 12) {
                 @endif
               </section>
                 <section id="Credit" class="tab-panel">
-                <h2>Credit</h2>
+                <h2>Credit Transactions</h2>
                 @if ($credit->isEmpty())
                 <h3>You do not have  any credit transaction.</h3>
                 @else
@@ -249,7 +250,7 @@ if (date("H") < 12) {
                 @endif
                 </section>
                 <section id="Debit" class="tab-panel">
-                <h2>Debit</h2>
+                <h2>Debit Transactions</h2>
                 @if ($debit->isEmpty())
                 <h3>You do not have  any debit transaction.</h3>
                 @else
